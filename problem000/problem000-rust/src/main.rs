@@ -6,17 +6,17 @@ Among the first 513 thousand square numbers, what is the sum of all the odd squa
 */
 
 fn main() {
-    let mut result: f64 = 0.0;
+    let mut result: u64 = 0;
 
-    let mut i: f64 = 0.0;
-    while i < 826000.0 {
-        i+=1.0;
+    let mut i: u64 = 0;
+    while i < 826000 {
+        i+=1;
 
         // Get the square of i
-        let x = i.powf(2.0);
+        let x = i.pow(2);
 
         // Check if odd
-        if x % 2.0 != 0.0 {
+        if x % 2 != 0 {
 
             // Sum of odd squares
             result += x;
