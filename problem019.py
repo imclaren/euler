@@ -24,11 +24,11 @@ def is_leap(year):
         return False
     return True
 
-def get_months(year):
-    months=[31,28,31,30,31,30,31,31,30,31,30,31]
+def get_days(year):
+    days=[31,28,31,30,31,30,31,31,30,31,30,31]
     if is_leap(year): 
-        months[1]=29 # Feb
-    return months
+        days[1]=29 # Feb
+    return days
 
 # Manual
 out = 0
@@ -36,10 +36,11 @@ d_names = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat']
 m_names = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
 dow = 1 # 1 Jan 1900 is a Monday
 for year in range(1900,2001):
-    months = get_months(year)
+    months = get_days(year)
     for month in months:
         # 1 Jan 1900 is a Monday but we are counting from 1901
-        if dow == 0 and year != 1900: out += 1
+        if dow == 0 and year != 1900: 
+            out += 1
         dow = (dow+month)%7
 print(out)
 
